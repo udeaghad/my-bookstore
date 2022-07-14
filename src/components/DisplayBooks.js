@@ -1,19 +1,11 @@
 import React, {useState} from 'react';
 import Books from './Books';
+import AddBook from './AddBook';
 
 const DisplayBooks = () => {
-    const [books, setBooks] = useState([
-        {
-        title: 'abc',
-        author: 'cde',
-        id: 1
-    }, 
-    {
-        title: 'fgh',
-        author: 'kji',
-        id:2
-    }
-])
+    const [books, setBooks] = useState([])
+
+setBooks;
 
 return (
     <div>
@@ -24,7 +16,8 @@ return (
             author={books.author}
          />
         ))}
-        
+
+       <AddBook /> 
 
     </div>
 )
