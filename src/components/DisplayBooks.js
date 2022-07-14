@@ -1,27 +1,26 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Books from './Books';
 import AddBook from './AddBook';
 
 const DisplayBooks = () => {
-    const [books, setBooks] = useState([])
+  const [books, setBooks] = useState([]);
 
-setBooks;
+  const handleSubmit = () => setBooks();
 
-return (
+  return (
     <div>
-        {books.map(books => (
-            <Books
-            key={books.id}
-            title={books.title}
-            author={books.author}
-         />
-        ))}
+      {books.map((books) => (
+        <Books
+          key={books.id}
+          title={books.title}
+          author={books.author}
+        />
+      ))}
 
-       <AddBook /> 
+      <AddBook handleSubmit={handleSubmit} />
 
     </div>
-)
+  );
+};
 
-}
-
-export default DisplayBooks
+export default DisplayBooks;
