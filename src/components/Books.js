@@ -1,18 +1,35 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import { shallowEqual, useSelector } from 'react-redux';
 
-const Books = ({ title, author }) => (
-  <ul>
-    <div>{title}</div>
-    <div>{author}</div>
-    <button type="button">Remove</button>
+
+
+
+export default () => { 
+ const showBooks = useSelector(state => state.books, shallowEqual)  
+ 
+  return ( 
+  <ul> 
+     {showBooks.map(bookList => (
+      <li key={bookList.id}>       
+      <div>{bookList.title}</div>      
+      <div>{bookList.author}</div>
+      <br></br>
+    </li>
+     ))}
+     
+    
+    
+    <button   type="button">Remove</button>
   </ul>
 
-);
+  )
 
-Books.propTypes = {
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
 };
 
-export default Books;
+// Books.propTypes = {
+//   title: PropTypes.string.isRequired,
+//   author: PropTypes.string.isRequired,
+// };
+
+
