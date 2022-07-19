@@ -6,6 +6,7 @@ const AddBook = () => (
     <form>
       <input name="title" type="text" placeholder="Book Title" />
       <input name="author" type="text" placeholder="Author" />
+      <input name="category" type="text" placeholder="category" />
       <button type="submit">ADD BOOK</button>
     </form>
 
