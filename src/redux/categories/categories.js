@@ -8,7 +8,7 @@ const categories = [];
 
 export default (state = categories, action) => {
   switch (action.type) {
-    case CHECK_STATUS:      
+    case CHECK_STATUS:
       return [
         ...state, 'Under construction',
       ];
