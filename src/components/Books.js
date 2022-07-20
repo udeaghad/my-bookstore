@@ -8,11 +8,10 @@ import { removedBook } from '../redux/books/books';
 export default () => { 
  const showBooks = useSelector(state => state.books, shallowEqual) 
  const dispatch = useDispatch() 
+ 
  const deleteBook = (e) => {
- const targetId = e.target.id
- 
- dispatch(removedBook(targetId))
- 
+ const targetId = e.target.id 
+ dispatch(removedBook(targetId)) 
 }
  
  
@@ -31,17 +30,11 @@ export default () => {
       Remove
       </button>   
       
-    </li>
-   
+    </li>   
     
-     ))}
-
-
-    
+     ))}    
   </ul>
-
   )
-
 };
 
 // Books.propTypes = {

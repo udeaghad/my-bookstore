@@ -42,14 +42,6 @@ const dispatch = useDispatch()
 
   return (
     <div>
-      {/* {books.map((books) => (
-        <Books
-          key={books.id}
-          title={books.title}
-          author={books.author}
-        />
-      ))} */}
-
       <Bookslist />
 
       <AddBook handleSubmit={handleSubmit} onChange={onChange}/>

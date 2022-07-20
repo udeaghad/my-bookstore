@@ -19,7 +19,12 @@ const AddBook = ({handleSubmit, onChange}) => (
       onChange={(e) => onChange(e)}
       />
 
-      <button onClick={(e) => handleSubmit(e)} type='button'>ADD BOOK</button>
+      <button 
+      onClick={(e) => handleSubmit(e)} 
+      type='submit'
+      >
+        ADD BOOK
+      </button>
     </form>
 
   </div>
