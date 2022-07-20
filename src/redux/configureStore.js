@@ -4,8 +4,8 @@ import AddAndRemoveReducer from './books/books';
 import CategoriesReducer from './categories/categories';
 
 const reducer = combineReducers({
-  addAndRemoveBook: AddAndRemoveReducer,
-  checkStatus: CategoriesReducer,
+  books: AddAndRemoveReducer,
+  categories: CategoriesReducer,
 });
 
 const store = configureStore({ reducer });

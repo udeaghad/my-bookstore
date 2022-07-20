@@ -1,18 +1,35 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { removedBook } from '../redux/books/books';
 
-const Books = ({ title, author }) => (
-  <ul>
-    <div>{title}</div>
-    <div>{author}</div>
-    <button type="button">Remove</button>
-  </ul>
+export default function Bookslist() {
+  const showBooks = useSelector((state) => state.books, shallowEqual);
+  const dispatch = useDispatch();
 
-);
+  const deleteBook = (e) => {
+    const targetId = e.target.id;
+    dispatch(removedBook(targetId));
+  };
 
-Books.propTypes = {
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-};
+  return (
+    <ul>
+      {showBooks.map((bookList) => (
+        <li key={bookList.id}>
+          <div>{bookList.title}</div>
+          <div>{bookList.author}</div>
 
-export default Books;
+          <button
+            id={bookList.id}
+            type="button"
+            onClick={(e) => deleteBook(e)}
+          >
+            Remove
+          </button>
+
+        </li>
+
+      ))}
+    </ul>
+  );
+}
