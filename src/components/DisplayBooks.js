@@ -21,14 +21,23 @@ const dispatch = useDispatch()
       ...books,
       [e.target.name]: e.target.value,
       id: uuidv4()
-    })
-  }
+    })   
+    
+   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if(books.title.trim() && books.author.trim()){
         dispatch(addedBook(books))
     }
+    //To clear the input field
+    e.target.parentElement.children[0].value = "";
+    e.target.parentElement.children[1].value = "";
+
+    setBooks({
+      title: '',
+      author:''
+    })
   }
 
   return (
