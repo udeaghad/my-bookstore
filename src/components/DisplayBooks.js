@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import AddBook from './AddBook';
 import Bookslist from './Books';
-import { addedBook } from '../redux/books/books';
+import { createBook } from '../redux/books/apiReducers';
 
 const DisplayBooks = () => {
   const dispatch = useDispatch();
@@ -11,21 +11,25 @@ const DisplayBooks = () => {
   const [books, setBooks] = useState({
     title: '',
     author: '',
-    id: '',
+    category: '',
+    item_id: '',
+
   });
 
   const onChange = (e) => {
     setBooks({
       ...books,
       [e.target.name]: e.target.value,
-      id: uuidv4(),
+      item_id: uuidv4(),
+
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (books.title.trim() && books.author.trim()) {
-      dispatch(addedBook(books));
+      dispatch(createBook(books));
     }
     // To clear the input field
     e.target.parentElement.children[0].value = '';
@@ -34,6 +38,8 @@ const DisplayBooks = () => {
     setBooks({
       title: '',
       author: '',
+      item_id: '',
+      category: '',
     });
   };
 
