@@ -23,9 +23,9 @@ export default function Bookslist() {
 
       {showBooks.map((bookList) => (
         <li className='item-container' key={bookList.item_id}>
-          <div className='category-item'>{bookList.category}</div>
-          <div className='title-item'>{bookList.title}</div>
-          <div className='author-item'>{bookList.author}</div>
+          <dt className='category-item'>{bookList.category}</dt>
+          <dt className='title-item'>{bookList.title}</dt>
+          <dt className='author-item'>{bookList.author}</dt>
 
           <button className='comment-btn' type='button'>Comments</button>
 
@@ -41,12 +41,15 @@ export default function Bookslist() {
           <button className='edit-btn'>Edit</button>
 
           <div className='status-container'>
-            <div className='read-status'></div>
-            <div className='chapter-container'>
-              <h2 className='current-chapter'></h2>
-              <p className='chapter-topic'></p>
+            <dt className='progress-report'>
+              <dl className='read-status'></dl>
+              <dl className='percent-compl'></dl>
+            </dt>
+            <dt className='chapter-container'>
+              <dl className='current-chapter'></dl>
+              <dl className='chapter-topic'></dl>
               <button type='button' className='progress'></button>
-            </div>
+            </dt>
           </div>
 
 
