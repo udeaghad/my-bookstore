@@ -20,6 +20,13 @@ const AddBook = ({ handleSubmit, onChange }) => (
         onChange={(e) => onChange(e)}
       />
 
+      <input
+        name="category"
+        type="text"
+        placeholder="Category"
+        onChange={(e) => onChange(e)}
+      />
+
       <button
         onClick={(e) => handleSubmit(e)}
         type="submit"

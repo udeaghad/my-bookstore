@@ -22,17 +22,33 @@ export default function Bookslist() {
     <ul>
 
       {showBooks.map((bookList) => (
-        <li key={bookList.item_id}>
-          <div>{bookList.title}</div>
-          <div>{bookList.author}</div>
+        <li className='item-container' key={bookList.item_id}>
+          <div className='category-item'>{bookList.category}</div>
+          <div className='title-item'>{bookList.title}</div>
+          <div className='author-item'>{bookList.author}</div>
+
+          <button className='comment-btn' type='button'>Comments</button>
 
           <button
+            className='remove-btn'
             id={bookList.item_id}
             type="button"
             onClick={(e) => removeBookItem(e)}
           >
             Remove
           </button>
+
+          <button className='edit-btn'>Edit</button>
+
+          <div className='status-container'>
+            <div className='read-status'></div>
+            <div className='chapter-container'>
+              <h2 className='current-chapter'></h2>
+              <p className='chapter-topic'></p>
+              <button type='button' className='progress'></button>
+            </div>
+          </div>
+
 
         </li>
 
