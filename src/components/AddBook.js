@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const AddBook = ({ handleSubmit, onChange }) => (
 
   <div>
-    <caption>ADD NEW BOOK</caption>
+    <h1>ADD NEW BOOK</h1>
     <form>
       <input
         name="title"
