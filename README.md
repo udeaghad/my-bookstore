@@ -8,6 +8,8 @@
 - Add a book.
 - Remove a selected book.
 
+The project was done to understand the concept of state management, use of store, actions and reducers in React and connecting React and Redux. React best practices and language style guides was also applied in the code.
+
 This application was built using React and Redux.
 
 ## Built With
