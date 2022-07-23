@@ -27,8 +27,7 @@ const DisplayBooks = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (books.title.trim() && books.author.trim()) {
+    if (books.title.trim() && books.author.trim() && books.category.trim()) {
       dispatch(createBook(books));
     }
     // To clear the input field
